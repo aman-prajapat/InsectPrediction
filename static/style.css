@@ -1,0 +1,164 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f8f7;
+  text-align: center;
+  padding: 40px;
+}
+
+.container {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 450px;
+  margin: auto;
+}
+
+h1 {
+  color: #228b22;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #444;
+  font-size: 15px;
+}
+
+input[type="file"] {
+  margin: 20px 0;
+}
+
+button {
+  background: #228b22;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1c761c;
+}
+
+.result-img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.prediction-box {
+  text-align: left;
+  background: #f1f9f1;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.prediction-box ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.prediction-box li {
+  margin: 6px 0;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.back-btn {
+  display: inline-block;
+  text-decoration: none;
+  background: #ddd;
+  padding: 8px 15px;
+  border-radius: 8px;
+  color: black;
+}
+
+.back-btn:hover {
+  background: #ccc;
+}
+
+.sample-section {
+  margin-top: 20px;
+}
+
+.label-samples {
+  margin-bottom: 20px;
+}
+
+.sample-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.sample-slider::-webkit-scrollbar {
+  height: 8px;
+}
+
+.sample-slider::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.sample-slider::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.sample-img {
+  height: 120px;
+  border-radius: 6px;
+  object-fit: cover;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.sample-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.info-box {
+  background-color: #f3f9ff;
+  border-left: 4px solid #007bff;
+  margin: 6px 0 12px 10px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Popup (Modal) */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #fff;
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}

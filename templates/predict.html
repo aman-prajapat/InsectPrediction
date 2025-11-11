@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Detection Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Google Translate Script -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,bn,ta,te,ml,kn,gu,mr,pa,or,as,sd,ne', // Indian languages only
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🔍 Detection Results</h1>
+
+    <!-- Google Translate Dropdown -->
+    <div id="google_translate_element"></div>
+
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if image_data %}
+    <img src="data:image/jpeg;base64,{{ image_data }}" alt="Detected Image" class="result-img">
+    {% endif %}
+
+    {% if predictions %}
+    <div class="prediction-box">
+      <h3>Detected Labels:</h3>
+      <ul>
+        {% for p in predictions %}
+        <li>
+          <b>{{ p.label }}</b> — {{ p.confidence }}
+          <div class="info-box">
+            {% for key, value in p.info.items() %}
+            <p><b>{{ key | capitalize }}:</b> {{ value }}</p>
+            {% endfor %}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
+    {% if sample_images %}
+    <div class="sample-section">
+      <h3>Sample Images for Detected Labels:</h3>
+      {% for label, imgs in sample_images.items() %}
+      <div class="label-samples">
+        <h4>{{ label }}</h4>
+        <div class="sample-slider">
+          {% for img in imgs %}
+          <img src="data:image/jpeg;base64,{{ img }}" alt="{{ label }}" class="sample-img"
+            onclick="openModal('data:image/jpeg;base64,{{ img }}')">
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <br>
+    <a href="/" class="back-btn">🔙 Go Back</a>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imgModal" class="image-modal" onclick="closeModal()">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="">
+  </div>
+
+  <script>
+    // JS for popup image view
+    function openModal(src) {
+      const modal = document.getElementById('imgModal');
+      const modalImg = document.getElementById('modalImage');
+      modalImg.src = src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('imgModal').style.display = 'none';
+    }
+
+    // Close modal on pressing Esc key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === "Escape") closeModal();
+    });
+  </script>
+
+</body>
+
+</html>

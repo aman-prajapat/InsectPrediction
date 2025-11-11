@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Insect Damage Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,hi,bn,ta,te,ml,kn,gu,mr,pa,or,as,sd,ne', // Indian languages only
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript"
+        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🌿 AI Insect Damage Detector</h1>
+        <p>Upload or capture a plant image to detect insect damage using AI.</p>
+
+        <!-- Google Translate Dropdown -->
+        <div id="google_translate_element"></div>
+
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" capture="environment" required>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

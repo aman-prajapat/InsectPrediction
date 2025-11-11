@@ -1,0 +1,18 @@
+{
+  "Grey weevil": {
+    "pesticides": "Apply chlorpyrifos 20 EC @ 2.5 ml/litre of water. Soil drenching near the root zone can be effective against larvae.",
+    "insecticides": "Use imidacloprid 17.8 SL @ 0.5 ml/litre or neem oil 2% as foliar spray at early infestation."
+  },
+  "Gurdle Beetle": {
+    "pesticides": "Spray triazophos 40 EC @ 2.5 ml/litre or profenofos 50 EC @ 2 ml/litre. Focus on the stem base area.",
+    "insecticides": "Use chlorpyrifos 20 EC or lambda-cyhalothrin 5 EC at recommended dosage. Apply twice at 15-day intervals."
+  },
+  "Stem Fly": {
+    "pesticides": "Spray dimethoate 30 EC @ 2 ml/litre or thiamethoxam 25 WG @ 0.3 g/litre during early infestation stage.",
+    "insecticides": "Use imidacloprid 17.8 SL seed treatment @ 5 ml/kg seed or apply systemic insecticides during vegetative growth."
+  },
+  "White Fly": {
+    "pesticides": "Use neem-based formulations (neem oil 3%) or buprofezin 25 SC @ 1 ml/litre. Ensure good leaf coverage.",
+    "insecticides": "Apply thiamethoxam 25 WG @ 0.25 g/litre or acetamiprid 20 SP @ 0.3 g/litre. Avoid repeated use of same chemical to prevent resistance."
+  }
+}
