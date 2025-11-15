@@ -51,7 +51,7 @@ project/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/plant-pest-detector.git
+git clone https://github.com/aman-prajapat/plant-pest-detector.git
 cd plant-pest-detector
 ```
 
